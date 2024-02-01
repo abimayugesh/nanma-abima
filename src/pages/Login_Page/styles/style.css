@@ -1,13 +1,13 @@
 .container{
-    @apply flex items-center justify-center h-screen 
+    @apply flex items-center justify-center h-screen bg-black 
 }
 
 .section{
-    @apply mt-5 w-[400px] h-[400px] bg-white rounded-[20px] border border-green-700  
+    @apply mt-2 w-[400px] h-[500px] bg-white rounded-[20px] border border-green-700 
 }
 
 .heading{
-    @apply text-black  text-3xl font-bold font-['Roboto'] text-center mt-2
+    @apply text-black  text-3xl font-bold font-['Roboto'] text-center mt-11
 }
 
 .para-1{
@@ -15,4 +15,7 @@
 }
 .form{
     @apply flex flex-col items-center justify-center mt-4
+}
+.link{
+   @apply flex flex-row  gap-24 mt-5 text-blue-500;
 }

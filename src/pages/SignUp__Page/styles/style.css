@@ -1,0 +1,19 @@
+.container{
+    @apply flex items-center justify-center h-screen 
+}
+
+.section{
+    @apply mt-2 w-fit h-fit bg-white rounded-[20px] border border-green-700
+}
+
+.heading{
+    @apply text-black  text-3xl font-bold font-['Roboto'] text-center mt-3
+}
+
+
+.form{
+    @apply flex flex-col items-center justify-center 
+}
+.link{
+   @apply flex flex-row justify-between gap-8 mt-5;
+}
