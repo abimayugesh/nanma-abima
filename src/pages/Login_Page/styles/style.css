@@ -1,0 +1,18 @@
+.container{
+    @apply flex items-center justify-center h-screen 
+}
+
+.section{
+    @apply mt-5 w-[400px] h-[400px] bg-white rounded-[20px] border border-green-700  
+}
+
+.heading{
+    @apply text-black  text-3xl font-bold font-['Roboto'] text-center mt-2
+}
+
+.para-1{
+    @apply  text-center text-black  text-opacity-70 text-[15px] font-normal font-['Roboto'] p-2
+}
+.form{
+    @apply flex flex-col items-center justify-center mt-4
+}

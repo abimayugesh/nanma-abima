@@ -1,0 +1,10 @@
+.input-group{
+    @apply flex flex-col sm:flex justify-center md:flex justify-center
+}
+.input{
+    @apply text-sm font-normal w-[300px] h-[40px]  bg-zinc-100 rounded-lg justify-start items-center 
+}
+    
+.button{
+    @apply w-[300px] h-[40px] text-white bg-blue-800 rounded-lg mt-5
+}
