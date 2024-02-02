@@ -1,0 +1,24 @@
+.container{
+    @apply flex items-center justify-center min-h-screen bg-black 
+}
+
+.section{
+    @apply mt-2 lg:w-[30%] lg:h-[600px] bg-white rounded-2xl border border-green-700 md:w-[60%] md:h-[600px] w-[400px] h-[550px] md:py-3 md:py-2 lg:py-2
+}
+
+.heading{
+    @apply text-black font-bold lg:text-xl font-bold  text-center mt-11 md:text-3xl
+}
+
+.para-1{
+    @apply  text-center text-black   text-opacity-70 lg:text-[16px] font-normal font-['Roboto'] p-4 md:text-xl ;
+}
+.form{
+    @apply flex flex-col items-center justify-center mt-4
+}
+.link{
+   @apply   gap-2 mt-2;
+}
+.link-colour{
+    @apply text-blue-500 md:text-xl lg:text-[15px];
+}

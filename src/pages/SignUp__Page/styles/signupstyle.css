@@ -1,9 +1,9 @@
 .container{
-    @apply flex items-center justify-center h-screen 
+    @apply    bg-white  border border-green-700 lg:h-[200%];
 }
 
 .section{
-    @apply mt-2 w-fit h-fit bg-white rounded-[20px] border border-green-700
+    @apply mt-2  md:h-[400px] md:py-10 rounded-[20px]
 }
 
 .heading{

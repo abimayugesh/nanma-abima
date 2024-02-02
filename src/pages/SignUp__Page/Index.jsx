@@ -3,7 +3,7 @@ import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedThin } from "react-icons/pi";
-import "./styles/style.css";
+import "./styles/signupstyle.css"
 
 function SignUp() {
   const [input, setInput] = useState({
@@ -31,6 +31,7 @@ function SignUp() {
             <IoCloseCircleOutline className="align-end absolute right-2 mr-4 text-3xl cursor-pointer mt-2" />
           </div>
           <h1 className="heading">Sign Up</h1>
+          <div>
            <form className="form">
             <Input
               type="text"
@@ -81,9 +82,10 @@ function SignUp() {
               required
             />
         <Button text="Register" onClick={handleButtonClick} />
-        
+        <h1 className=" p-2 mb-20px">Already have an account?</h1>
           
           </form>
+          </div>
         </div>
       </div>
     </div>

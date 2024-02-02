@@ -1,11 +1,11 @@
 .input-group{
-    @apply flex flex-col flex justify-center md:flex justify-center
+    @apply flex flex-col flex justify-center md:flex justify-center  md:text-xl lg:text-[15px]
 }
 .input{
-    @apply text-sm font-normal w-[300px] h-[40px]  bg-zinc-100 rounded-lg justify-start items-center p-2 
+    @apply text-sm font-normal w-[278px] h-[30px] lg:w-[300px] lg:h-[45px] bg-zinc-100 rounded-lg justify-start items-center p-4 md:text-[15px] md:py-3 md:h-[40px] lg:text-xs  
 }
 
     
 .button{
-    @apply w-[300px] h-[40px] text-white bg-blue-800 rounded-lg mt-5 
+    @apply w-[300px] h-[40px] text-white bg-blue-800 rounded-lg mt-5 lg:w-[300px] lg:h-[40px] md:w-[278px]
 }
