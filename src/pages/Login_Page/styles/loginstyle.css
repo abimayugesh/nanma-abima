@@ -3,15 +3,15 @@
 }
 
 .section{
-    @apply mt-2 lg:w-[400px] lg:h-[600px] bg-white rounded-3xl border border-green-700 md:w-[60%] md:h-[600px] w-[400px] h-[550px] md:py-3 md:py-2 lg:py-2
+    @apply mt-2 lg:w-[450px] lg:h-[580px] bg-white rounded-3xl border border-green-700 md:w-[60%] md:h-[600px] w-[450px] h-[580px] py-5
 }
 
 .heading{
-    @apply text-black font-bold lg:text-xl font-bold  text-center mt-11 md:text-3xl
+    @apply text-black font-bold lg:text-xl font-bold  text-center mt-11 md:text-3xl  
 }
 
 .para-1{
-    @apply  text-center text-black   text-opacity-70 lg:text-[16px] font-normal font-['Roboto'] p-4 md:text-xl ;
+    @apply  text-center text-black   text-opacity-70 lg:text-[16px] font-normal font-['Roboto'] p-4 md:text-xl text-nowrap;
 }
 .form{
     @apply flex flex-col items-center justify-center mt-4
