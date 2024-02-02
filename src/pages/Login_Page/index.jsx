@@ -19,14 +19,14 @@ function Login() {
   };
 
   return (
-    <div className="">
+    <div className="bg-black">
     <div className="container">
     <div className ="section">
     <div className="relative">
       <IoCloseCircleOutline className="align-end absolute right-2 mr-4 text-3xl cursor-pointer mt-2" />
       </div>
       <h1 className="heading">Welcome back!</h1>
-        <h6 className="para-1">Where Every Bite Tells a Story, and Every<br/> Moment Feels Like Home!</h6>
+        <div className="para-1">Where Every Bite Tells a Story, and Every<br/> Moment Feels Like Home!</div>
         
     <form className="form">
       <Input 
@@ -46,14 +46,19 @@ function Login() {
       placeholder="****"
       onChange={handleOnchange}
       required />
-    <PiEyeClosedThin className="absolute h-5 w-7 top-7 lg:top-10 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+    <PiEyeClosedThin className="absolute h-5 w-10 top-12 md:top-15  lg:top-13 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+    <p className=" text-right  text-xs text-zinc-400">Forgot Password ?</p>
         </div>
+        
+        
+
+        
         <div>
       <Button
         text="Login"
         onClick={handleButtonClick} />
      </div>
-     <Link className="mt-3 link-colour" to="/forgot-password">Forgot password?</Link>
+     
      <div  className="link">
      <h1 className="md:text-xl lg:text-[15px]">Don't have an account?</h1>
      <Link className="link-colour" to="/signup">Sign up</Link>

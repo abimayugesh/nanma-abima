@@ -1,19 +1,16 @@
-.container{
-    @apply    bg-white  border border-green-700 lg:h-[200%];
+.container-1{
+    @apply flex items-center justify-center min-h-screen bg-black 
 }
 
-.section{
-    @apply mt-2  md:h-[400px] md:py-10 rounded-[20px]
+.section-1{
+    @apply mt-2 lg:w-[400px] lg:h-[650px] bg-white rounded-xl border border-green-700 md:w-[450px] md:h-[700px] w-[450px] h-[700px] py-5
 }
 
-.heading{
-    @apply text-black  text-3xl font-bold font-['Roboto'] text-center mt-3
+.heading-1{
+    @apply text-black font-bold text-xl font-bold  text-center mt-9   
 }
 
 
-.form{
-    @apply flex flex-col items-center justify-center 
-}
-.link{
-   @apply flex flex-row justify-between gap-8 mt-5;
+.form-1{
+    @apply flex flex-col items-center justify-center mt-4
 }

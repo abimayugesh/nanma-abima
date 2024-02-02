@@ -4,6 +4,7 @@ import Button from "../../components/UI/Button";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedThin } from "react-icons/pi";
 import "./styles/signupstyle.css"
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [input, setInput] = useState({
@@ -25,14 +26,14 @@ function SignUp() {
   };
  return (
     <div className="bg-black">
-      <div className="container">
-        <div className="section">
+      <div className="container-1">
+        <div className="section-1">
           <div className="relative">
             <IoCloseCircleOutline className="align-end absolute right-2 mr-4 text-3xl cursor-pointer mt-2" />
           </div>
-          <h1 className="heading">Sign Up</h1>
+          <h1 className="heading-1">Sign Up</h1>
           <div>
-           <form className="form">
+           <form className="form-1">
             <Input
               type="text"
               name="name"
@@ -70,7 +71,7 @@ function SignUp() {
                 onChange={handleOnchange}
                 required
               />
-              <PiEyeClosedThin className="absolute h-5 w-9 top-7 lg:top-10 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+              <PiEyeClosedThin className="absolute h-5 w-10 top-12 md:top-15  lg:top-13 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
             </div>
             <Input
               type="password"
@@ -82,7 +83,7 @@ function SignUp() {
               required
             />
         <Button text="Register" onClick={handleButtonClick} />
-        <h1 className=" p-2 mb-20px">Already have an account?</h1>
+        <h1 className=" p-2 mb-20px">Already have an account? <Link className="link-colour" to="/">Log in</Link></h1>
           
           </form>
           </div>
