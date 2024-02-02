@@ -46,7 +46,7 @@ function Login() {
       placeholder="****"
       onChange={handleOnchange}
       required />
-    <PiEyeClosedThin className="absolute h-5 w-7 top-9 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+    <PiEyeClosedThin className="absolute h-5 w-7 top-7 lg:top-10 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
         </div>
         <div>
       <Button
