@@ -3,7 +3,7 @@
 }
 
 .section-1{
-    @apply mt-2 lg:w-[400px] lg:h-[650px] bg-white rounded-xl border border-green-700 md:w-[450px] md:h-[700px] w-[450px] h-[700px] py-5
+    @apply mt-2 lg:w-[380px] lg:h-[650px] bg-white rounded-xl border border-green-700 md:w-[450px] md:h-[700px] w-[350px] h-[700px] py-5
 }
 
 .heading-1{

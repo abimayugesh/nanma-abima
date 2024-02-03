@@ -19,4 +19,3 @@ function Input  ({ label, value,name, onChange, type,placeholder }) {
 };
 
 export default Input;
-
