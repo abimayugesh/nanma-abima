@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { PiEyeClosedThin } from "react-icons/pi";
+import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/loginstyle.css"
 import { Link } from "react-router-dom";
 function Login() {
   
   const [input,setInput]=useState({username:"", password:""});
+  const [ showPassword, setShowPassword] = useState(false);
+    const handleShowPassword =()=>{
+    setShowPassword(!showPassword);
+    };
 
   const handleOnchange=(e)=>{
     const{name,value}=e.target;
@@ -39,14 +43,17 @@ function Login() {
        required />
        <div className="relative">
       <Input 
-      type="password"
+      type={showPassword ? "text" :"password"}
       name="password"
       value={input.password} 
       label="Password"
       placeholder="****"
       onChange={handleOnchange}
       required />
-    <PiEyeClosedThin className="absolute h-5 w-10 top-12 md:top-15  lg:top-13 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+    { showPassword ? 
+   <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
+ :<PiEyeClosedFill onClick={handleShowPassword} className="absolute h-5 w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />}
+              
     <p className=" text-right  text-xs text-zinc-400">Forgot Password ?</p>
         </div>
         
