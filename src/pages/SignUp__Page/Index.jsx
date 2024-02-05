@@ -5,16 +5,17 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/signupstyle.css"
 import { Link } from "react-router-dom";
+import Validation from "../../utilis/validators/validator";
 
 function SignUp() {
   const [input, setInput] = useState({
     name: "",
     email: "",
-    number: "",
+    phone: "",
     password: "",
     confirmPassword: "",
   });
-  
+  const[errors,setErrors]=useState([])
     const [ showPassword, setShowPassword] = useState(false);
     const handleShowPassword =()=>{
     setShowPassword(!showPassword);
@@ -29,6 +30,11 @@ function SignUp() {
     console.log("Button clicked!", input);
     
   };
+
+  function handleValidation(e){
+    e.preventDefault();
+    setErrors(Validation(input));
+  }
  return (
     <div className="bg-black">
       <div className="container-1">
@@ -38,7 +44,7 @@ function SignUp() {
           </div>
           <h1 className="heading-1">Sign Up</h1>
           <div>
-           <form className="form-1">
+           <form className="form-1" onSubmit={handleValidation}>
             <Input
               type="text"
               name="name"
@@ -46,8 +52,8 @@ function SignUp() {
               label="Name"
               onChange={handleOnchange}
               placeholder="Your Name"
-              required
-            />
+              
+            />{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
             <Input
               type="email"
               name="email"
@@ -55,17 +61,17 @@ function SignUp() {
               label="Email"
               onChange={handleOnchange}
               placeholder="Your Email"
-              required
-            />
+              
+            />{errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             <Input
-              type="text"
-              name="number"
-              value={input.number}
+              type="number"
+              name="phone"
+              value={input.phone}
               label="Mobile Number"
               onChange={handleOnchange}
               placeholder="Your Mobile Number"
-              required
-            />
+              
+            />{errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
             <div className="relative">
               <Input
                 type={showPassword ? "text" :"password"}
@@ -74,8 +80,8 @@ function SignUp() {
                 label="Password"
                 placeholder="****"
                 onChange={handleOnchange}
-                required
-              />
+                
+              />{errors.password && <p className="text-red-500 text-center text-sm">{errors.password}</p>}
               
               { showPassword ? 
               <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
@@ -89,8 +95,8 @@ function SignUp() {
               label="Confirm Password"
               placeholder="****"
               onChange={handleOnchange}
-              required
-            />
+              
+            />{errors.confirmPassword && <p className="text-red-500  text-center text-sm">{errors.confirmPassword}</p>}
         <Button text="Register" onClick={handleButtonClick} />
         <h1 className=" p-2 mb-20px">Already have an account? <Link className="link-colour" to="/">Log in</Link></h1>
           
