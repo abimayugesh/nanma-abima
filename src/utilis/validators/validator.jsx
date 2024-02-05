@@ -1,4 +1,3 @@
-
 export default function Validation(input) {
   const errors = {};
   const phonePattern = /^[0-9\b]+$/;
@@ -23,15 +22,13 @@ export default function Validation(input) {
   if (input.password === "") {
     errors.password = "Password required";
   } else if (!passwordRegex.test(input.password)) {
-    errors.password = "Enter a valid password";
+    errors.password = "Atleast 8chars,1digit,1special char,1uppercase";
   }
   if (input.password !== "undefined" && input.confirmPassword !== "undefined") {
     if (input.password !== input.confirmPassword) {
       errors.confirmPassword = "Passwords don't match.";
     }
   }
-
-
 
   return errors;
 }

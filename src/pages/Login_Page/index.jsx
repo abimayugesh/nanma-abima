@@ -66,8 +66,8 @@ function Login() {
         onClick={handleButtonClick} />
      </div>
      
-     <div  className="link">
-     <h1 className="md:text-xl lg:text-[15px]">Don't have an account?</h1>
+     <div  className="link ">
+     <h1 className="text-[15px]">Don't have an account?</h1>
      <Link className="link-colour" to="/signup">Sign up</Link>
      </div>
     

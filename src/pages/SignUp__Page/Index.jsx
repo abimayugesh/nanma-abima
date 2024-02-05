@@ -36,7 +36,7 @@ function SignUp() {
     setErrors(Validation(input));
   }
  return (
-    <div className="bg-black">
+    <div className="bg-black mih-h-screen">
       <div className="container-1">
         <div className="section-1">
           <div className="relative">
@@ -53,7 +53,7 @@ function SignUp() {
               onChange={handleOnchange}
               placeholder="Your Name"
               
-            />{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+            />{errors.name && <p className="text-red-500 text-[14px]">{errors.name}</p>}
             <Input
               type="email"
               name="email"
@@ -62,7 +62,7 @@ function SignUp() {
               onChange={handleOnchange}
               placeholder="Your Email"
               
-            />{errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            />{errors.email && <p className="text-red-500 text-[13px]">{errors.email}</p>}
             <Input
               type="number"
               name="phone"
@@ -71,7 +71,7 @@ function SignUp() {
               onChange={handleOnchange}
               placeholder="Your Mobile Number"
               
-            />{errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+            />{errors.phone && <p className="text-red-500 text-[14px] text-center">{errors.phone}</p>}
             <div className="relative">
               <Input
                 type={showPassword ? "text" :"password"}
@@ -81,7 +81,7 @@ function SignUp() {
                 placeholder="****"
                 onChange={handleOnchange}
                 
-              />{errors.password && <p className="text-red-500 text-center text-sm">{errors.password}</p>}
+              />{errors.password && <p className="text-red-500 text-[14px] text-center  ">{errors.password}</p>}
               
               { showPassword ? 
               <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
@@ -96,7 +96,7 @@ function SignUp() {
               placeholder="****"
               onChange={handleOnchange}
               
-            />{errors.confirmPassword && <p className="text-red-500  text-center text-sm">{errors.confirmPassword}</p>}
+            />{errors.confirmPassword && <p className="text-red-500  text-center text-[13px]">{errors.confirmPassword}</p>}
         <Button text="Register" onClick={handleButtonClick} />
         <h1 className=" p-2 mb-20px">Already have an account? <Link className="link-colour" to="/">Log in</Link></h1>
           
