@@ -1,5 +1,5 @@
 .container-1{
-    @apply flex items-center justify-center min-h-screen lg:h-[100%] 
+    @apply flex items-center justify-center  lg:h-[100%] 
 }
 
 .section-1{

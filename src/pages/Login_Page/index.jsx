@@ -5,8 +5,9 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/loginstyle.css"
 import { Link } from "react-router-dom";
+import Validation from "../../utilis/validators/validator";
 function Login() {
-  
+  const[errors,setErrors]=useState([])
   const [input,setInput]=useState({username:"", password:""});
   const [ showPassword, setShowPassword] = useState(false);
     const handleShowPassword =()=>{
@@ -21,6 +22,11 @@ function Login() {
     console.log('Button clicked!');
   
   };
+  
+  function handleValidation(e){
+    e.preventDefault();
+    setErrors(Validation(input));
+  }
 
   return (
     <div className="bg-black">
@@ -32,7 +38,7 @@ function Login() {
       <h1 className="heading">Welcome back!</h1>
         <div className="para-1">Where Every Bite Tells a Story, and Every<br/> Moment Feels Like Home!</div>
         
-    <form className="form">
+    <form className="form"  onSubmit={handleValidation}>
       <Input 
       type="text"
       name="username"
@@ -41,6 +47,7 @@ function Login() {
       onChange={handleOnchange}
       placeholder="Mobile number"
        required />
+      {errors.email && <p className="text-red-500 text-[13px]">{errors.email}</p>}
        <div className="relative">
       <Input 
       type={showPassword ? "text" :"password"}
@@ -50,6 +57,7 @@ function Login() {
       placeholder="****"
       onChange={handleOnchange}
       required />
+      {errors.password && <p className="text-red-500 text-[14px] text-center  ">{errors.password}</p>}
     { showPassword ? 
    <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
  :<PiEyeClosedFill onClick={handleShowPassword} className="absolute h-5 w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />}
