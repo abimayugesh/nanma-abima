@@ -97,9 +97,11 @@ function SignUp() {
               onChange={handleOnchange}
               
             />{errors.confirmPassword && <p className="text-red-500  text-center text-[13px]">{errors.confirmPassword}</p>}
-        <Button text="Register" onClick={handleButtonClick} />
+            <div className="signup-button">
+        <Button  text="Register" onClick={handleButtonClick} />
+        </div>
         <h1 className=" p-2 mb-20px">Already have an account? <Link className="link-colour" to="/">Log in</Link></h1>
-          
+        
           </form>
           </div>
         </div>

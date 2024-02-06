@@ -9,6 +9,3 @@
 }
 
     
-.button{
-    @apply w-[260px] h-[50px] text-white bg-blue-800 rounded-lg mt-3 lg:w-[320px] lg:h-[50px] md:w-[300px] h-[50px] p-2 rounded-full border-solid border-2  border-indigo-600 ;
-}

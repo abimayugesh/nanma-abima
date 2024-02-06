@@ -3,6 +3,7 @@ export default function Validation(input) {
   const phonePattern = /^[0-9\b]+$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+  const otpPattern = /^[0-9\b]+$/;
   if (input.phone === "") {
     errors.phone = "Phone number is required";
   } else if (!phonePattern.test(input.phone)) {
@@ -29,6 +30,11 @@ export default function Validation(input) {
       errors.confirmPassword = "Passwords don't match.";
     }
   }
-
+  if (input.otp === "") {
+    errors.otp = "Enter the otp";
+  } 
+  else if (!otpPattern.test(input.otp)) {
+    errors.phone = "Please enter only numbers.";
+  } 
   return errors;
 }

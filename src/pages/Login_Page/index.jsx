@@ -62,14 +62,14 @@ function Login() {
    <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />
  :<PiEyeClosedFill onClick={handleShowPassword} className="absolute h-5 w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />}
               
-    <p className=" text-right  text-xs text-zinc-400">Forgot Password ?</p>
+  <Link to="/resetpass"className="flex justify-end  text-xs text-zinc-400">Forgot Password ?</Link>
         </div>
         
         
 
         
-        <div>
-      <Button
+        <div className="login-button">
+      <Button   
         text="Login"
         onClick={handleButtonClick} />
      </div>
