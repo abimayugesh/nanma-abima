@@ -1,9 +1,9 @@
 .container-1{
-    @apply flex items-center justify-center  lg:h-[100%] 
+    @apply flex items-center justify-center  min-h-screen
 }
 
 .section-1{
-    @apply mt-2 lg:w-[410px]  bg-white rounded-xl border  md:w-[380px]  w-[320px] lg:h-[800px] md:h-[780px] h-[780px] py-5
+    @apply mt-2 lg:w-[410px]  bg-white rounded-xl border  md:w-[380px]  w-[320px]   py-5
 }
 
 .heading-1{

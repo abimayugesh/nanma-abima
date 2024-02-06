@@ -39,7 +39,7 @@ function Login() {
         <div className="para-1">Where Every Bite Tells a Story, and Every<br/> Moment Feels Like Home!</div>
         
     <form className="form"  onSubmit={handleValidation}>
-      <Input 
+      <Input  
       type="text"
       name="username"
       value={input.username} 
@@ -48,7 +48,7 @@ function Login() {
       placeholder="Mobile number"
        required />
       {errors.email && <p className="text-red-500 text-[13px]">{errors.email}</p>}
-       <div className="relative">
+       <div className="relative mt-0">
       <Input 
       type={showPassword ? "text" :"password"}
       name="password"
