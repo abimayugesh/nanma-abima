@@ -25,16 +25,16 @@ export default function Validation(input) {
   } else if (!passwordRegex.test(input.password)) {
     errors.password = "Atleast 8chars,1digit,1special char,1uppercase";
   }
-  if (input.password !== "undefined" && input.confirmPassword !== "undefined") {
+  
     if (input.password !== input.confirmPassword) {
       errors.confirmPassword = "Passwords don't match.";
     }
-  }
+
   if (input.otp === "") {
     errors.otp = "Enter the otp";
   } 
   else if (!otpPattern.test(input.otp)) {
-    errors.phone = "Please enter only numbers.";
+    errors.otp = "Please enter only numbers.";
   } 
   return errors;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import "../styles/style.css"
-function Input  ({ label, value,name, onChange, type,placeholder }) {
+function Input  ({ label, value,name, onChange, type,placeholder,id }) {
   return (
     <div className='input-group '>
   <label className='mt-1 flex items-center' >{label}</label>
@@ -10,6 +10,8 @@ function Input  ({ label, value,name, onChange, type,placeholder }) {
           name={name}
           placeholder={placeholder}
           onChange={(e)=>onChange(e)}
+          autoComplete='off'
+          id={id}
          />
       
   

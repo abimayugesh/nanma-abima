@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import Input from "../../components/UI/Input";
 import Button from "../../components/UI/Button";
 import { IoCloseCircleOutline } from "react-icons/io5";
+
 import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/loginstyle.css"
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Validation from "../../utilis/validators/validator";
+
+
 function Login() {
   const[errors,setErrors]=useState([])
-  const [input,setInput]=useState({username:"", password:""});
+  const [input,setInput]=useState({phone:"", password:""});
   const [ showPassword, setShowPassword] = useState(false);
-    const handleShowPassword =()=>{
+  
+  const handleShowPassword =()=>{
     setShowPassword(!showPassword);
     };
 
@@ -18,14 +22,12 @@ function Login() {
     const{name,value}=e.target;
     setInput({...input,[name]:value})
   };
-  const handleButtonClick = () => {
-    console.log('Button clicked!');
   
-  };
   
   function handleValidation(e){
     e.preventDefault();
     setErrors(Validation(input));
+   
   }
 
   return (
@@ -40,14 +42,14 @@ function Login() {
         
     <form className="form"  onSubmit={handleValidation}>
       <Input  
-      type="text"
-      name="username"
-      value={input.username} 
+      type="number"
+      name="phone"
+      value={input.phone} 
       label="EmailID/Mobile Number"
       onChange={handleOnchange}
       placeholder="Mobile number"
        required />
-      {errors.email && <p className="text-red-500 text-[13px]">{errors.email}</p>}
+     {errors.phone && <p className="text-red-500 text-[14px] text-center">{errors.phone}</p>}
        <div className="relative mt-0">
       <Input 
       type={showPassword ? "text" :"password"}
@@ -64,14 +66,8 @@ function Login() {
               
   <Link to="/resetpass"className="flex justify-end  text-xs text-zinc-400">Forgot Password ?</Link>
         </div>
-        
-        
-
-        
-        <div className="login-button">
-      <Button   
-        text="Login"
-        onClick={handleButtonClick} />
+      <div className="login-button">
+      <Button text="Login"/>
      </div>
      
      <div  className="link ">
