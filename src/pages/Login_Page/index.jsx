@@ -5,7 +5,8 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 
 import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/loginstyle.css"
-import { Link} from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
+import usePost from "../../api/hooks/usePost";
 import Validation from "../../utilis/validators/validator";
 
 
@@ -13,6 +14,16 @@ function Login() {
   const[errors,setErrors]=useState([])
   const [input,setInput]=useState({phone:"", password:""});
   const [ showPassword, setShowPassword] = useState(false);
+
+  const {
+    loading,
+    error: apiErrors,
+    postData,
+  } = usePost({
+    url: "https://portal.umall.in/api/customer/login",
+    successCB: signUpSuccess
+  });
+  const navigate=useNavigate()
   
   const handleShowPassword =()=>{
     setShowPassword(!showPassword);
@@ -23,12 +34,24 @@ function Login() {
     setInput({...input,[name]:value})
   };
   
-  
-  function handleValidation(e){
-    e.preventDefault();
-    setErrors(Validation(input));
-   
+  const handleValidation = async (event) => {
+    event.preventDefault()
+    setErrors(Validation(input))
+      await postData({
+        body: {
+          emailormobile:input.phone, password: input.password
+        },
+      });
   }
+  function signUpSuccess({ data = {} }) {
+    const userId = data?.user?.id;
+    if (userId) {
+        console.log(userId, 'from signup form');
+        navigate('/home');
+    } else {
+        console.error('User ID not found in response data');
+    }  
+  }
 
   return (
     <div className="bg-black">
@@ -48,6 +71,7 @@ function Login() {
       label="EmailID/Mobile Number"
       onChange={handleOnchange}
       placeholder="Mobile number"
+      id={"phone"}
        required />
      {errors.phone && <p className="text-red-500 text-[14px] text-center">{errors.phone}</p>}
        <div className="relative mt-0">
@@ -58,7 +82,8 @@ function Login() {
       label="Password"
       placeholder="****"
       onChange={handleOnchange}
-      required />
+      required 
+      id={"pass"}/>
       {errors.password && <p className="text-red-500 text-[14px] text-center  ">{errors.password}</p>}
     { showPassword ? 
    <PiEyeClosedBold onClick={handleShowPassword} className="absolute h-4  w-10 top-14 md:top-15  lg:top-12 inset-y-0 right-1 pr-3 flex items-center cursor-pointer" />

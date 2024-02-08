@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import axios from 'axios';
 
 function usePost({url='',successCB = () => { }}) {
     const [data, setData] = useState(null)
@@ -27,9 +26,8 @@ function usePost({url='',successCB = () => { }}) {
                 successCB({data:result})
             }
         }
-          
-           
-        } catch (error) {
+        } 
+        catch (error) {
             setError(error)
         }
         setTimeout(() => {
