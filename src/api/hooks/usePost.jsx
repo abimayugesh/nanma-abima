@@ -8,16 +8,27 @@ function usePost({url='',successCB = () => { }}) {
 
     const postData = async ({body={}}) => {
         try {
-            const response = await axios.post(url, body)
-            const result = await response.data
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body),
+            })
+          if(response.ok){
+            const result = await response.json();
             console.log(result)
             if(result.sts === '00'){
-                alert('Enter your correct details')
+                alert('Incorrect details')
+                throw new Error(JSON.stringify(result))
             }
             if(result.sts === '01'){
                 alert(result.msg)
                 successCB({data:result})
             }
+        }
+          
+           
         } catch (error) {
             setError(error)
         }
