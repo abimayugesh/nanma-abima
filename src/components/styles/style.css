@@ -1,11 +1,9 @@
 .input-group{
     @apply flex flex-col justify-start  font-sans text-[16px] font-normal 
 }
-.input-group-label{
-    @apply flex justify-start
-}
+
 .input{
-    @apply text-sm  font-normal w-[260px] h-[50px] lg:w-[320px] lg:h-[50px] bg-zinc-100 rounded-xl justify-start items-center p-4  md:py-3 md:h-[50px]  md:w-[320px] text-gray-300;
+    @apply text-sm text-black font-normal w-[260px] h-[50px] lg:w-[320px] lg:h-[50px] bg-zinc-100 rounded-xl justify-start items-center p-4  md:py-3 md:h-[50px]  md:w-[320px] ;
 }
 
     

@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 function usePost({url='',successCB = () => { }}) {
     const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState('')
 
     const postData = async ({body={}}) => {
+        setLoading(true);
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -17,6 +18,7 @@ function usePost({url='',successCB = () => { }}) {
           if(response.ok){
             const result = await response.json();
             console.log(result)
+            setLoading(false);
             if(result.sts === '00'){
                 alert('Incorrect details')
                 throw new Error(JSON.stringify(result))
@@ -28,11 +30,10 @@ function usePost({url='',successCB = () => { }}) {
         }
         } 
         catch (error) {
+            setLoading(false);
             setError(error)
         }
-        setTimeout(() => {
-            setLoading(false)
-        }, 2000);
+        
     }
 
     return { data, loading, error, postData };
