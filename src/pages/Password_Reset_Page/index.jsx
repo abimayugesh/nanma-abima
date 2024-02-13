@@ -43,14 +43,14 @@ function PasswordReset() {
     await getOtp({
       body: { number: input.phone },
     });
+    
+   
   };
-
-  
-
-  const handleResetPassword = async (event) => {
+ const handleResetPassword = async (event) => {
     event.preventDefault()
     const resetpassErrors = ResetpassValidation(input);
     if(Object.keys(resetpassErrors).length === 0 && input.otp == resetCode ) {
+    
       await  resetPassword({
         body: {
           number: input.phone, password: input.password
@@ -109,7 +109,7 @@ return (
       type="password"
       name="password"
       value={input.password} 
-      placeholder="****"
+      placeholder="Reset password"
       onChange={handleOnchange}
       required />
       {errors.password && <p className="text-red-500 text-[14px] text-center  ">{errors.password}</p>}
@@ -119,7 +119,7 @@ return (
         type="password"
        name="confirmPassword"
       value={input.confirmPassword}
-      placeholder="****"
+      placeholder="Confirm password"
      onChange={handleOnchange}/>
      {errors.confirmPassword && <p className="text-red-500  text-center text-[13px]">{errors.confirmPassword}</p>}       
      </div>
