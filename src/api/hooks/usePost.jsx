@@ -28,7 +28,7 @@ function usePost({url='',successCB = () => { }}) {
                 successCB({data:result})
                 setData(result)
                 setResetCode(result.otp)
-                alert(`Use OTP ${result.otp} to update your password`);
+                
             }}} 
                 
         catch (error) {
