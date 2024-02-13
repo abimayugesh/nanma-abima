@@ -5,7 +5,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/signupstyle.css"
 import { Link,useNavigate } from "react-router-dom";
-import Validation from "../../utilis/validators/validator";
+import SignupValidation from "../../utilis/validators/SignupValidation";
 import usePost from "../../api/hooks/usePost";
 
 function SignUp() {
@@ -17,16 +17,7 @@ function SignUp() {
     confirmPassword: "",
   });
 
-  const {
-    loading,
-    error: apiErrors,
-    postData,
-  } = usePost({
-    url: "https://portal.umall.in/api/customer/register",
-    successCB: signUpSuccess
-  });
-
-
+ 
 
   const[errors,setErrors]=useState({})
     const [ showPassword, setShowPassword] = useState(false);
@@ -41,18 +32,32 @@ function SignUp() {
     setInput({ ...input, [name]: value });
   };
 
-  
+  const {
+    loading,
+    error: apiErrors,
+    postData,
+  } = usePost({
+    url: "https://portal.umall.in/api/customer/register",
+    successCB: signUpSuccess
+  });
 
-  const handleValidation = async (event) => {
+
+const handleValidation = async (event) => {
     event.preventDefault()
-    setErrors(Validation(input))
-    if(Object.keys(errors).length === 0){
+    const signupValErrors = SignupValidation(input);
+    
+    if(Object.keys(signupValErrors).length === 0){
       await postData({
         body: {
           name: input.name, email: input.email, password: input.password, phone: input.phone
         },
-      });
-  }
+      }); 
+    }
+    else {
+        setErrors(signupValErrors);
+        console.log(signupValErrors);
+      }
+  
   }
   function signUpSuccess({ data = {} }) {
     const userId = data?.user?.id;

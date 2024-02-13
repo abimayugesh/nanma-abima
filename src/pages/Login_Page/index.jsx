@@ -7,7 +7,7 @@ import { PiEyeClosedBold, PiEyeClosedFill } from "react-icons/pi";
 import "./styles/loginstyle.css"
 import { Link,useNavigate} from "react-router-dom";
 import usePost from "../../api/hooks/usePost";
-import Validation from "../../utilis/validators/validator";
+import LoginValidation from "../../utilis/validators/loginValidation";
 
 
 function Login() {
@@ -36,14 +36,22 @@ function Login() {
   
   const handleValidation = async (event) => {
     event.preventDefault()
-    setErrors(Validation(input))
-    if(Object.keys(errors).length === 0){
+    const loginValErrors = LoginValidation(input);
+    
+    if(Object.keys(loginValErrors).length === 0){
       await postData({
         body: {
-          emailormobile:input.phone, password: input.password
+          emailormobile: input.phone,
+          password: input.password,
         },
-      });
-  }}
+      }); 
+    }
+    else {
+        setErrors(loginValErrors);
+        console.log(loginValErrors);
+      }
+  
+  }
 
 
   function signInSuccess({ data = {} }) {

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-
 function usePost({url='',successCB = () => { }}) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('')
+    const [resetCode,setResetCode]= useState('')
 
     const postData = async ({body={}}) => {
         setLoading(true);
@@ -26,17 +26,15 @@ function usePost({url='',successCB = () => { }}) {
             if(result.sts === '01'){
                 alert(result.msg)
                 successCB({data:result})
-            }
-        }
-        } 
+                setData(result)
+                setResetCode(result.otp)
+            }}} 
+                
         catch (error) {
             setLoading(false);
-            setError(error)
-        }
-        
-    }
+            setError(error)}}
 
-    return { data, loading, error, postData };
+    return { data, loading, error, postData,resetCode };
 };
 
 export default usePost;
