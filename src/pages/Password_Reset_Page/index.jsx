@@ -9,8 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function PasswordReset() {
   const[errors,setErrors]=useState([])
-
-  
+  const[otpData,setOtpData]=useState({});
   const [input,setInput]=useState({
     phone:"", 
     otp:"",
@@ -21,9 +20,10 @@ function PasswordReset() {
     loading,
     postData:getOtp,
     resetCode,
+    
   } = usePost({
     url: 'https://portal.umall.in/api/check-mobile',
-    
+    successCB:getOtpSuccess
   });
   const {
     loading:resetLoading,
@@ -43,9 +43,13 @@ function PasswordReset() {
     await getOtp({
       body: { number: input.phone },
     });
-    
-   
-  };
+   };
+   function getOtpSuccess({ data = {} }) {
+    const otpData = data
+    setOtpData(otpData)
+    alert(`Use OTP ${otpData.otp} to update your password`);
+  }
+
  const handleResetPassword = async (event) => {
     event.preventDefault()
     const resetpassErrors = ResetpassValidation(input);

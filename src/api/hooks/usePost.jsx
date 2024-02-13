@@ -17,6 +17,7 @@ function usePost({url='',successCB = () => { }}) {
             })
           if(response.ok){
             const result = await response.json();
+            
             console.log(result)
             setLoading(false);
             if(result.sts === '00'){
