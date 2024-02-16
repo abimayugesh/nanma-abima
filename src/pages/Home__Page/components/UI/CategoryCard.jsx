@@ -1,12 +1,10 @@
-
-
 const CategoryCard = ({data}) => {
   return (
-    <div>
+    <div className="flex flex-col  py-3">
         <div> 
-            <img src={data.categoryProductimg} alt="" />
+            <img className="rounded-full"src={data.categoryProductimg} alt="" />
         </div>
-        <div>
+        <div className="font-semibold lg:ml-9 ml-3 ">
             <h3><span>{data.categoryProductname}</span></h3>
         </div>
       

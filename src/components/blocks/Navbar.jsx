@@ -9,7 +9,8 @@ import { FaRegHeart } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between items-center w-[100%] md:w-[92%] md:mx-auto p-4 border-black border-solid bg-white '>
+    <div className='border b-2 bg-white'>
+    <div className='flex justify-between items-center w-[100%] md:w-[92%] md:mx-auto p-4 '>
       <div className='flex items-center'>
         <div>
         <TfiMenu size={25} className='md:hidden cursor-pointer' />
@@ -53,6 +54,7 @@ const Navbar = () => {
         </div>
        </div>
        
+    </div>
     </div>
   )
 }
