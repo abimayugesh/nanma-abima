@@ -67,11 +67,7 @@ function PasswordReset() {
         console.log(resetpassErrors);
       }
      }
-      
-
-  
-
-return (
+     return (
   <div className="resetpass-container">
     <div className ="resetpass-section">
     <div className="relative">

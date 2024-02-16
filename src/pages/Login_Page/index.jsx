@@ -110,8 +110,6 @@ function Login() {
      <h1 className="text-[15px]">Don't have an account?</h1>
      <Link className="link-colour" to="/signup">Sign up</Link>
      </div>
-    
-      
     </form>
     { loading ? <div class="text-center">
            <div role="status">
@@ -128,5 +126,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
