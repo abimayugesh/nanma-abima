@@ -58,7 +58,7 @@ function Login() {
     const userId = data?.user?.id;
     if (userId) {
         console.log(userId, 'from login form');
-        navigate('/home');
+        navigate('/');
     } else {
         console.error('User id is not found in response');
 }

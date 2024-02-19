@@ -63,7 +63,7 @@ const handleValidation = async (event) => {
     const userId = data?.user?.id;
     if (userId) {
         console.log(userId, 'from signup form');
-        navigate('/');
+        navigate('/login');
     } else {
         console.error('User id is not found in response');
 }

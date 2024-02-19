@@ -55,15 +55,15 @@ const Category = () => {
 
   return (
     <div className=' pt-12  w-[92%] mx-auto  '>
-        <div className='flex justify-evenly lg:gap-[86%] gap-[55%]'>
+        <div className='flex justify-evenly lg:gap-[84%] md:gap-[75%] gap-[45%]'>
         <div className='flex items-center lg:gap-[12px] gap-2'>
           <img src={button} alt="button" />
-          <p className='text-indigo-800 font-poppins font-semibold text-base leading-5'>Categories</p>
+          <p className='text-indigo-800 font-poppins font-semibold text-xl leading-5'>Categories</p>
         </div>
         <p className='font-semibold' >See all</p>
         </div>
 
-            <div className='grid lg:grid-cols-8 gap-4 mt-3 md:grid-cols-4 grid-cols-4'>
+            <div className='grid lg:grid-cols-8 lg:gap-10 gap-5 lg:mx-auto  mx-5  pt-8  grid-cols-4 md:w-[100%]'>
                 {
                  categoryProducts.map((item)=>{
                     return(

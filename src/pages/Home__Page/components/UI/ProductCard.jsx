@@ -1,17 +1,17 @@
-import Wishlist from '../../../../assets/images/Wishlist.png'
+import { FaRegHeart } from "react-icons/fa";
 
 const ProductCard = ({data}) => {
     return (
-      <div className='bg-gray-100 lg:w-[264px] w-[180px] min-h-[10rem] rounded-md p-5 shadow-lg overflow-hidden '>
+      <div className='bg-gray-100 w-[110%]   rounded-md p-5 shadow-lg overflow-hidden '>
         <div  >
-            <img  className='ml-48'src={Wishlist} alt="" />
-            <img className='w-[140px] h-[150]px mx-auto my-auto' src={data.productImg} alt="" />
+             <FaRegHeart className='lg:ml-48 md:ml-60 ml-28 mt-2 ' size={20} />
+            <img className=' md:w-[80%]   mx-auto my-auto' src={data.productImg} alt="" />
           </div>
           <div>
-              <p className='font-roboto font-normal text-base leading-[22.4px] mx-auto mt-4'>{data. productName}</p>
+              <p className='font-roboto font-normal lg:text-base md:text-[20px] text-base leading-[22.4px] mx-auto mt-4'>{data. productName}</p>
           </div>
           <div>
-            <p className='font-roboto font-normal text-base leading-[22.4px] mx-auto mt-1' >{data. productPrice}</p>
+            <p className='font-roboto font-normal lg:text-base md:text-[20px] text-base leading-[22.4px] mx-auto mt-1' >{data. productPrice}</p>
           </div>
         
       </div>

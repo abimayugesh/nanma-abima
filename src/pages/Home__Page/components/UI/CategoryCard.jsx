@@ -4,7 +4,7 @@ const CategoryCard = ({data}) => {
         <div> 
             <img className="rounded-full"src={data.categoryProductimg} alt="" />
         </div>
-        <div className="font-semibold lg:ml-9 ml-3 ">
+        <div className="font-semibold lg:ml-9  md:ml-7 ml-3 ">
             <h3><span>{data.categoryProductname}</span></h3>
         </div>
       

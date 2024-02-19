@@ -60,7 +60,7 @@ function PasswordReset() {
           number: input.phone, password: input.password
         },
       }); 
-      navigate('/');  
+      navigate('/login');  
     } 
     else {
         setErrors(resetpassErrors);
